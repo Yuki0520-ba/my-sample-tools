@@ -8,11 +8,13 @@ install_requires = (here / 'requirements.txt').read_text(encoding='utf-8').split
 
 setup(
     install_requires = install_requires,
-    package_dir=("", "src"),
+    name = "sample-cli",
+    version = "0.0.1",
+    package_dir={"": "src"},
     packages= find_packages("src"),
     entry_points={
-        "console_scripts": [
-            "sample-cli = sample-cli.cli:main"
-        ]
-    }  
+        'console_scripts': [
+            'samplecli = sample_cli.cli:main',
+        ],
+    },  
 )

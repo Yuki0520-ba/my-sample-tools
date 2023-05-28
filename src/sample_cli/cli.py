@@ -37,7 +37,9 @@ def fizz_buzz(input_number):
     click.echo("Not fizz and buzz.", err= True)
 
 
-
-if __name__ == "__main__":
+def main():
     cli.add_command(fizz_buzz)
     cli()
+
+if __name__ == "__main__":
+    main()
