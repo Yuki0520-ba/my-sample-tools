@@ -8,7 +8,7 @@ install_requires = (here / 'requirements.txt').read_text(encoding='utf-8').split
 
 setup(
     install_requires = install_requires,
-    name = "sample-cli",
+    name = "my-sample-tools",
     version = "0.0.1",
     package_dir={"": "src"},
     packages= find_packages("src"),
