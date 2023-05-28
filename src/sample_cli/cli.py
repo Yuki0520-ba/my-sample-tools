@@ -1,7 +1,7 @@
 
 import click
 
-from fizzbuzz import fizz_buzz
+from .fizzbuzz import fizz_buzz
 
 
 @click.group()
