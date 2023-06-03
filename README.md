@@ -7,5 +7,6 @@
 ## how to install 
 
 ```shell
-pip install git+https://github.com/Yuki0520-ba/my-sample-tools.git
+$ pip install --upgrade  pip 
+$ pip install git+https://github.com/Yuki0520-ba/my-sample-tools.git
 ```
