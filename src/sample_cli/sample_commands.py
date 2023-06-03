@@ -1,6 +1,7 @@
 
 import click 
 import os
+import time
 
 
 @click.command("show-param", short_help='show sample parametors.')
@@ -40,7 +41,23 @@ def edit_your_config_file(file_path):
         click.echo_via_pager(lines)
 
     click.echo('Command finished.')
-    
+
+
+@click.command("show-progress", short_help="You can show progress time that specified by --seconds option.")
+@click.option('--total-seconds', type=int, prompt='input seconds which belong to you want to show progress.')
+@click.option('--between-seconds', 
+              type=int, 
+              prompt='input seconds which wait betwwen progress.',
+              required=False,
+              default=1)
+def show_progress(total_seconds, between_seconds):
+    with click.progressbar(range(1, total_seconds, between_seconds)) as bar:
+        for x in bar:
+            click.echo(f'  sleep({x}/{total_seconds})...')
+            time.sleep(between_seconds)
+
+    click.secho('\n Finished command!!' , fg='blue')
+
 
 
 def main():
